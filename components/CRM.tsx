@@ -120,7 +120,7 @@ export const CRM: React.FC = () => {
               <input type="text" placeholder="Company Name" className="w-full p-2 border rounded-lg" value={newClient.company} onChange={e => setNewClient({...newClient, company: e.target.value})} />
               <input type="text" placeholder="Contact Person" className="w-full p-2 border rounded-lg" value={newClient.name} onChange={e => setNewClient({...newClient, name: e.target.value})} />
               <input type="number" placeholder="Potential Value (₹)" className="w-full p-2 border rounded-lg" value={newClient.projectValue} onChange={e => setNewClient({...newClient, projectValue: e.target.value})} />
-              <select className="w-full p-2 border rounded-lg" value={newClient.brandId} onChange={e => setNewClient({...newClient, brandId: e.target.value})}>
+              <select className="w-full p-2 border rounded-lg" value={newClient.brandId} onChange={e => setNewClient({...newClient, brandId: e.target.value as BrandId})}>
                 {brands.map(b => <option key={b.id} value={b.id}>{b.name}</option>)}
               </select>
               <button onClick={handleAddClient} className="w-full py-2 bg-slate-900 text-white rounded-lg">Add to Pipeline</button>
